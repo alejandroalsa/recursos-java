@@ -1,11 +1,14 @@
 // Paquete del programa
-package alejandroalsaJava;
+package introduccion;
 
 // Importamos la clase Scanner para leer datos desde el teclado.
 import java.util.Scanner;
 
 // Clase "Menu" que contiene las opciones del menú principal.
 public class menu {
+
+    private static final int OPCION_MIN = 1;
+    private static final int OPCION_MAX = 5;
 
     // Método para mostrar el menú de opciones.
     public static void mostrarMenu() {
@@ -37,8 +40,8 @@ public class menu {
             opcion = scanner.nextInt();
 
             // Validación para asegurarse de que la opción esté dentro del rango permitido.
-            if (opcion < 1 || opcion > 5) {
-                System.out.println("\nOpción no válida. Por favor, seleccione un número entre 1 y 5.");
+            if (opcion < OPCION_MIN || opcion > OPCION_MAX) {
+                System.out.println("\nOpción no válida. Por favor, seleccione un número entre " + OPCION_MIN + " y " + OPCION_MAX + ".");
                 continue; // Regresamos al inicio del bucle si la opción es inválida.
             }
 
@@ -64,7 +67,7 @@ public class menu {
                     System.out.println("Error inesperado.");
             }
 
-        } while (opcion != 5); // El bucle termina cuando el usuario selecciona la opción "Salir".
+        } while (opcion != OPCION_MAX); // El bucle termina cuando el usuario selecciona la opción "Salir".
 
         // Cerramos el objeto Scanner para liberar recursos.
         scanner.close();
